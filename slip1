@@ -1,0 +1,21 @@
+1. Write a R program to take input from the user (name and age) and display the values. Also print the version of R installation.[10]
+name = readline(prompt="Input your name: ")
+age = readline(prompt="Input your age: ")
+print(paste("My name is",name, "and I am",age ,"years old."))
+print(R.version.string
+
+2. Using R import the data from Excel/.CSV file and find mean,median,mode, quartiles. [20]
+data <- read.csv("your_data.csv")
+mean_value <- mean(data)
+median_value <- median(data)
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+mode_value <- Mode(data)
+quartiles <- quantile(data, probs = c(0.25, 0.5, 0.75))
+print(paste("Mean:", mean_value))
+print(paste("Median:", median_value))
+print(paste("Mode:", mode_value))
+print("Quartiles:")
+print(quartiles)

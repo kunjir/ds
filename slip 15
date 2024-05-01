@@ -1,0 +1,36 @@
+1. Write a R program to list containing a vector, a matrix and a list and give names to the elements in the list.[10 M]
+# Create a vector
+my_vector <- c(1, 2, 3, 4, 5)
+
+# Create a matrix
+my_matrix <- matrix(1:9, nrow = 3)
+
+# Create a list
+my_list <- list(
+  Vector = my_vector,
+  Matrix = my_matrix,
+  Another_List = list("a", "b", "c")
+)
+
+# Assign names to the elements in the list
+names(my_list) <- c("My_Vector", "My_Matrix", "My_List")
+
+# Print the list
+print(my_list)
+
+2.Write a R program to create a factor corresponding to height of womendata set, which contains height and weights for a sample of women.
+# Example dataset containing height and weight for a sample of women
+women_data <- data.frame(
+  Height = c(160, 165, 170, 175, 180),
+  Weight = c(55, 60, 65, 70, 75)
+)
+
+# Define the breaks for height categories (for example)
+breaks <- c(150, 160, 170, 180, 190)
+
+# Create a factor corresponding to height
+height_factor <- cut(women_data$Height, breaks = breaks, labels = c("Short", "Average", "Tall", "Very Tall"))
+
+# Print the factor corresponding to height
+print("Factor corresponding to height:")
+print(height_factor)

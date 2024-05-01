@@ -1,0 +1,70 @@
+1. Write a R program to create a data frame using two given vectors  and display the duplicated elements and unique rows of the said dataframe [10]
+# Create two given vectors
+vector1 <- c("A", "B", "C", "D", "E", "F")
+vector2 <- c(1, 2, 3, 4, 5, 6)
+
+# Create a data frame using the vectors
+df <- data.frame(vector1, vector2)
+
+# Display the data frame
+print("Data Frame:")
+print(df)
+
+# Find duplicated elements
+duplicated_elements <- df[duplicated(df), ]
+print("Duplicated Elements:")
+print(duplicated_elements)
+
+# Find unique rows
+unique_rows <- unique(df)
+print("Unique Rows:")
+print(unique_rows)
+
+2.Write an R Program to calculate Decimal into binary of a givennumber.Consider the inbuilt iris dataset i) Create a variable “y” and attachto it theoutput attribute of the “iris”dataset .ii) Create a barplot tobreakdown your output attribute. iii) Create a density plot matrix for
+each attribute by class value.
+
+# Function to convert decimal to binary
+decimal_to_binary <- function(decimal_number) {
+  binary <- vector(mode = "numeric", length = 0)
+  while(decimal_number > 0) {
+    binary <- c(decimal_number %% 2, binary)
+    decimal_number <- decimal_number %/% 2
+  }
+  return(paste(binary, collapse = ""))
+}
+
+# Example: Convert decimal number 10 to binary
+decimal_input <- 10
+binary_output <- decimal_to_binary(decimal_input)
+print(paste("Binary representation of", decimal_input, "is:", binary_output))
+
+# Load the Iris dataset
+data(iris)
+
+# Create a variable "y" and attach to it the output attribute of the "iris" dataset
+y <- iris$Species
+
+# Create a barplot to breakdown the output attribute
+barplot(table(y), main = "Breakdown of Species", xlab = "Species", ylab = "Frequency", col = "skyblue")
+
+# Create a density plot matrix for each attribute by class value
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Sepal Length by Species")
+
+ggplot(iris, aes(x = Sepal.Width, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Sepal Width by Species")
+
+ggplot(iris, aes(x = Petal.Length, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Petal Length by Species")
+
+ggplot(iris, aes(x = Petal.Width, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Petal Width by Species")

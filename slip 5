@@ -1,0 +1,23 @@
+1. Write a R program to merge two given lists into one list.[10 M]
+# Define two lists
+list1 <- list("a", "b", "c")
+list2 <- list(1, 2, 3)
+
+# Merge the two lists into one
+merged_list <- c(list1, list2)
+
+# Print the merged list
+print(merged_list)
+
+2. Consider Weather dataset i) Selecting using the column number ii)Selecting using the column nameiii) Make a scatter plot to compare Windspeed and temperature.[20 M]
+
+wind_speed <- weather_dataset[, 3]
+temperature <- weather_dataset[, 5]
+
+# Selecting using the column name
+# Assuming Wind speed is named 'Wind' and Temperature is named 'Temp'
+wind_speed <- weather_dataset$Wind
+temperature <- weather_dataset$Temp
+
+# Make a scatter plot to compare Wind speed and Temperature
+plot(wind_speed, temperature, xlab = "Wind Speed", ylab = "Temperature", main = "Scatter Plot of Wind Speed vs Temperature")

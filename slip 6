@@ -1,0 +1,36 @@
+1. Write a R program to get the unique elements of a given string and unique numbers of vector. [10]]
+str1 = "Hello ! How are you?"
+print("Original vector(string)")
+print(str1)
+print("Unique elements of the said vector:")
+print(unique(tolower(str1)))
+nums = c(1, 2, 2, 3, 4, 4, 5, 6)
+print("Original vector(number)")
+print(nums)
+print("Unique elements of the said vector:")
+print(unique(nums))
+
+2. Write a R program to compare two data frames to find the row(s) in first data frame that are not present in second data frame [20] 
+# Install and load the dplyr package if not already installed
+# install.packages("dplyr")
+library(dplyr)
+
+# Define the first data frame
+df1 <- data.frame(
+  ID = c(1, 2, 3, 4, 5),
+  Name = c("John", "Alice", "Bob", "Emily", "Michael")
+)
+
+# Define the second data frame
+df2 <- data.frame(
+  ID = c(2, 4),
+  Name = c("Alice", "Emily")
+)
+
+# Compare two data frames to find the rows in the first data frame that are not present in the second data frame
+rows_not_in_second <- anti_join(df1, df2)
+
+# Print the rows in the first data frame that are not present in the second data frame
+print("Rows in the first data frame that are not present in the second data frame:")
+print(rows_not_in_second)
+

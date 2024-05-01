@@ -1,0 +1,61 @@
+1. Write an R program to sort a Vector in ascending and descending order.
+# Sample vector
+my_vector <- c(10, 5, 8, 2, 7)
+
+# Sort in ascending order
+sorted_ascending <- sort(my_vector)
+print("Sorted in ascending order:")
+print(sorted_ascending)
+
+# Sort in descending order
+sorted_descending <- sort(my_vector, decreasing = TRUE)
+print("Sorted in descending order:")
+print(sorted_descending)
+
+2. Write an R Program to calculate Decimal into binary of a givennumber.Consider the inbuilt iris datasetCreate a variable “y” and attach to it the output attribute of 
+the“iris”dataset .Create a barplot to breakdown your output attribute.Create a density plot matrix for each attribute by class value.
+# Function to convert decimal to binary
+decimal_to_binary <- function(decimal_number) {
+  binary <- vector(mode = "numeric", length = 0)
+  while(decimal_number > 0) {
+    binary <- c(decimal_number %% 2, binary)
+    decimal_number <- decimal_number %/% 2
+  }
+  return(paste(binary, collapse = ""))
+}
+
+# Example: Convert decimal number 10 to binary
+decimal_input <- 10
+binary_output <- decimal_to_binary(decimal_input)
+print(paste("Binary representation of", decimal_input, "is:", binary_output))
+
+# Load the Iris dataset
+data(iris)
+
+# Attach the output attribute (Species) to a variable y
+y <- iris$Species
+
+# Create a barplot to breakdown the output attribute
+barplot(table(y), main = "Breakdown of Species", xlab = "Species", ylab = "Frequency", col = "skyblue")
+
+# Create a density plot matrix for each attribute by class value
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Sepal Length by Species")
+
+ggplot(iris, aes(x = Sepal.Width, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Sepal Width by Species")
+
+ggplot(iris, aes(x = Petal.Length, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Petal Length by Species")
+
+ggplot(iris, aes(x = Petal.Width, fill = Species)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~Species) +
+  labs(title = "Density Plot of Petal Width by Species")

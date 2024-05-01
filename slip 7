@@ -1,0 +1,33 @@
+1. Write R program to find whether given number is positive or negative.
+# Function to determine whether a number is positive, negative, or zero
+check_number <- function(x) {
+  if (x > 0) {
+    print("The number is positive.")
+  } else if (x < 0) {
+    print("The number is negative.")
+  } else {
+    print("The number is zero.")
+  }
+}
+
+# Test the function with a sample number
+test_number <- -5
+check_number(test_number)
+
+2. Write R program to read number and print corresponding day name in a week.[20 M]
+
+# Function to print day name based on input number
+print_day <- function(day_number) {
+  days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+  if (day_number >= 1 && day_number <= 7) {
+    print(paste("The corresponding day for number", day_number, "is", days[day_number]))
+  } else {
+    print("Invalid input! Please enter a number between 1 and 7.")
+  }
+}
+
+# Read input number from the user
+input_number <- as.integer(readline(prompt = "Enter a number representing a day of the week (1-7): "))
+
+# Call the function to print the corresponding day name
+print_day(input_number)

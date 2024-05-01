@@ -1,0 +1,54 @@
+1. Write a R program to find nth highest value in a given vector. [10 M]
+# Function to find nth highest value in a vector
+find_nth_highest <- function(vector, n) {
+  sorted_vector <- sort(unique(vector), decreasing = TRUE)
+  if (n <= length(sorted_vector)) {
+    nth_highest <- sorted_vector[n]
+    print(paste("The", n, "highest value in the vector is:", nth_highest))
+  } else {
+    print("Error: n exceeds the length of the vector.")
+  }
+}
+
+# Example vector
+example_vector <- c(10, 5, 20, 15, 30)
+
+# Test the function with the example vector and n = 2
+find_nth_highest(example_vector, 2)
+
+2.Write a script in R to create a list of students and perform thefollowingGive names to the students in the list.Add a student at the end of the list.Remove the first Student.Update the second last student.
+# Create a list of students
+students <- list("Alice", "Bob", "Charlie", "David")
+
+# Print the initial list of students
+print("Initial list of students:")
+print(students)
+
+# Give names to the students in the list
+names(students) <- c("Student1", "Student2", "Student3", "Student4")
+
+# Print the list of students with names
+print("List of students with names:")
+print(students)
+
+# Add a student at the end of the list
+new_student <- "Emily"
+students <- c(students, new_student)
+
+# Print the list of students after adding a new student
+print("List of students after adding a new student:")
+print(students)
+
+# Remove the first student
+students <- students[-1]
+
+# Print the list of students after removing the first student
+print("List of students after removing the first student:")
+print(students)
+
+# Update the second last student
+students[length(students) - 1] <- "Michael"
+
+# Print the list of students after updating the second last student
+print("List of students after updating the second last student:")
+print(students)

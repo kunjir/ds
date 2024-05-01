@@ -1,0 +1,29 @@
+1. Write a R program to multiply two vectors of integers type and length 3.
+# Define two vectors of integers
+vector1 <- c(1, 2, 3)
+vector2 <- c(4, 5, 6)
+
+# Multiply the two vectors element-wise
+result <- vector1 * vector2
+
+# Print the result
+print("Result of multiplying two vectors element-wise:")
+print(result)
+
+2.Write a R program to save the information of a data frame in a file and display the information of the file. 
+# Create a sample data frame
+my_data <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(25, 30, 35),
+  Gender = c("Female", "Male", "Male")
+)
+
+# Save the data frame to a CSV file
+write.csv(my_data, file = "my_data.csv", row.names = FALSE)
+
+# Read the CSV file back into R
+read_data <- read.csv("my_data.csv")
+
+# Display the information of the file
+print("Information of the file:")
+print(read_data)

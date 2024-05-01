@@ -1,0 +1,26 @@
+Write a R program to create an empty data frame.[10 M]
+# Create an empty data frame
+empty_df <- data.frame()
+
+# Print the empty data frame
+print(empty_df)
+
+2. Write an R program to create a Data frames which contain details of5 employees and display the details in ascending order.[20 M]
+# Employee details
+employee_data <- data.frame(
+  Name = c("John", "Alice", "Bob", "Emily", "Michael"),
+  Age = c(30, 25, 35, 28, 40),
+  Department = c("HR", "IT", "Finance", "Marketing", "Operations"),
+  Salary = c(50000, 60000, 70000, 55000, 65000)
+)
+
+# Display the details before sorting
+print("Employee details before sorting:")
+print(employee_data)
+
+# Sort the data frame by Name in ascending order
+employee_data_sorted <- employee_data[order(employee_data$Name), ]
+
+# Display the details after sorting
+print("Employee details after sorting:")
+print(employee_data_sorted)

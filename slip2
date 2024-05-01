@@ -1,0 +1,19 @@
+1. Write a R program to create a simple bar plot of five subjects marks.[10 M]
+
+subject_names <- c("Math", "Science", "English", "History", "Geography")
+subject_marks <- c(85, 78, 90, 82, 88)
+barplot(subject_marks, names.arg = subject_names, xlab = "Subjects", ylab = "Marks", col = "blue", main = "Marks Distribution")
+legend("topright", legend = "Marks", fill = "blue")
+
+2.Using R import the data from Excel/.CSV file and find standard deviation, variance and co-variance. [20 M]
+
+data <- read.csv("your_data.csv")
+std_dev <- apply(data, 2, sd)
+variance <- apply(data, 2, var)
+covariance_matrix <- cov(data)
+print("Standard Deviation:")
+print(std_dev)
+print("Variance:")
+print(variance)
+print("Covariance Matrix:")
+print(covariance_matrix)

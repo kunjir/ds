@@ -1,0 +1,37 @@
+1. Write an R program to convert a given matrix to a list and print list in ascending order
+# Example matrix
+my_matrix <- matrix(c(3, 1, 4, 1, 5, 9), nrow = 2)
+
+# Convert matrix to a list
+my_list <- as.vector(my_matrix)
+
+# Print the list before sorting
+print("List before sorting:")
+print(my_list)
+
+# Sort the list in ascending order
+sorted_list <- sort(my_list)
+
+# Print the sorted list
+print("List in ascending order:")
+print(sorted_list)
+
+2.Consider Weather dataset i) Selecting using the column number ii) Selecting using the column nameiii) Make a scatter plot to compare Wind speed and temperature.
+# Load the necessary package containing the Weather dataset (if not already loaded)
+# library(package_name)
+
+# Assuming 'weather_dataset' is the name of your dataset
+
+# Selecting using the column number
+# Assuming Wind speed is column number 3 and Temperature is column number 5
+wind_speed <- weather_dataset[, 3]
+temperature <- weather_dataset[, 5]
+
+# Selecting using the column name
+# Assuming Wind speed is named 'Wind' and Temperature is named 'Temp'
+wind_speed <- weather_dataset$Wind
+temperature <- weather_dataset$Temp
+
+# Make a scatter plot to compare Wind speed and Temperature
+plot(wind_speed, temperature, xlab = "Wind Speed", ylab = "Temperature", main = "Scatter Plot of Wind Speed vs Temperature")
+

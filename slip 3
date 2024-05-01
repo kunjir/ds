@@ -1,0 +1,16 @@
+1. Write a R program to create a list containing a vector, a matrix anda list and remove the second element.[10 M]
+
+vector_data <- c(1, 2, 3, 4, 5)
+matrix_data <- matrix(1:9, nrow = 3)
+nested_list <- list(a = 1, b = 2, c = list(x = "foo", y = "bar"))
+my_list <- list(vector_data, matrix_data, nested_list)
+my_list[[1]] <- my_list[[1]][-2]
+my_list[[2]] <- my_list[[2]][-2, ]
+my_list[[3]]$b <- NULL
+print(my_list)
+
+2.Write a R program to call the (built-in) dataset air quality. Remove the variables 'Solar.R' and 'Wind' and display the data frame.[20 M]
+
+data(airquality)
+airquality_modified <- subset(airquality, select = -c(Solar.R, Wind))
+print(airquality_modified)

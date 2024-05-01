@@ -1,0 +1,35 @@
+1. Create a Matrix using R and Perform the operations addition,subtraction,multiplication [10]
+# Create two matrices
+matrix1 <- matrix(1:9, nrow = 3, byrow = TRUE)  # Example matrix 1
+matrix2 <- matrix(9:1, nrow = 3, byrow = TRUE)  # Example matrix 2
+
+# Display the matrices
+print("Matrix 1:")
+print(matrix1)
+print("Matrix 2:")
+print(matrix2)
+
+# Addition
+addition_result <- matrix1 + matrix2
+print("Addition Result:")
+print(addition_result)
+
+# Subtraction
+subtraction_result <- matrix1 - matrix2
+print("Subtraction Result:")
+print(subtraction_result)
+
+# Multiplication
+multiplication_result <- matrix1 %*% matrix2  # Matrix multiplication
+print("Multiplication Result:")
+print(multiplication_result)
+
+2. Write a R program to create an ordered factor from data consisting of the names of months.[20 M]
+# Sample vector containing names of months
+months <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+# Create an ordered factor from the vector
+ordered_months <- factor(months, ordered = TRUE)
+
+# Print the ordered factor
+print(ordered_months)

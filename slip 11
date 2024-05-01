@@ -1,0 +1,51 @@
+1. Write an R program to extract first 10 English letter in lower case and last 10 letters in upper case and extract letters between 22nd to 24th letters in upper case.
+# Define the English alphabet
+alphabet <- letters
+
+# Extract the first 10 English letters in lowercase
+first_10_lowercase <- alphabet[1:10]
+print("First 10 English letters in lowercase:")
+print(first_10_lowercase)
+
+# Extract the last 10 English letters in uppercase
+last_10_uppercase <- toupper(tail(alphabet, 10))
+print("Last 10 English letters in uppercase:")
+print(last_10_uppercase)
+
+# Extract letters between 22nd to 24th positions in uppercase
+between_22_24_uppercase <- toupper(alphabet[22:24])
+print("Letters between 22nd to 24th positions in uppercase:")
+print(between_22_24_uppercase)
+
+2.Write a script in R to create a list of students and perform the following Give names to the students in the list.Add a student at the end of the list.Remove the first Student.Update the second last student.
+# Create a list of students
+students <- list("Alice", "Bob", "Charlie", "David")
+
+# Give names to the students in the list
+names(students) <- paste("Student", 1:length(students))
+
+# Print the list of students with names
+print("List of students with names:")
+print(students)
+
+# Add a student at the end of the list
+new_student <- "Emily"
+students <- c(students, new_student)
+
+# Print the list of students after adding a new student
+print("List of students after adding a new student:")
+print(students)
+
+# Remove the first student
+students <- students[-1]
+
+# Print the list of students after removing the first student
+print("List of students after removing the first student:")
+print(students)
+
+# Update the second last student
+students[length(students) - 1] <- "Michael"
+
+# Print the list of students after updating the second last student
+print("List of students after updating the second last student:")
+print(students)
